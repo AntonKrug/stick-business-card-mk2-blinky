@@ -48,3 +48,39 @@ The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configu
 
 
 **Warning**: In this mode it's unsafe to stop the PWM without careful timing and setting the output to safe state before the execution is intrestuped. Things like JTAG debugging would be exposing the LED to dangers where the LED could be left in bad state for too long, however the `ATMEGA88` has no JTAG features. In simple terms, when using PWM extra measures have to be made to make sure it will not get stuck with the high output set for too long.
+
+# Pinout
+
+## Board pinout
+
+![pinout-whole](../assets/images/pinout_footprint.png)
+
+The ISP/SPI is exposed (on J2) as well, so the device can be powered and programmed from the board J2 connector directly, or programmed from the separate ISP pin header.
+
+| J1 | J2|
+| --- | --- |
+| PB2 | PD6 LED|
+| PB1 | VCC |
+| PB0 | GND |
+| PD7 | SCK |
+| PD5 | RST |
+| PC4 | MISO |
+| PC3 | MOSI |
+| PC2 | PC1 |
+
+## ISP pin-header pinout
+
+**Note**: This is not the typical 2.54mm pin spacing, but 1.27mm pin-header.
+
+![pinout-isp-schematic](../assets/images/pinout_isp_schematic.png)
+
+![pinout-isp-pcb](../assets/images/pinout_isp_pcb.png)
+
+| ISP1 pin | function |
+| --- | --- |
+| 1 | RST |
+| 2 | GND |
+| 3 | SCK |
+| 4 | MOSI |
+| 5 | MISO |
+| 6 | VCC |
