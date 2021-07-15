@@ -13,3 +13,5 @@ One variant has soldered pin headers on the edges and is simple, yet full dev bo
 ![breadboard](../assets/images/breadboard.jpg)
 
 This repository is documenting the "breadboard" variant, showing the pinout of the connectors and contains small morse code blinky project.
+
+**Note**: In the images above I'm showing only one side of the PCB, the one which doesn't contain the contact details of the business card and therefore the traces for the USB connector are not visible on the photos.
