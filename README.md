@@ -53,7 +53,7 @@ The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configu
 
 ## Board pinout
 
-![pinout-whole](../assets/images/pinout_footprint.png)
+![pinout-whole](../assets/images/pinout-footprint.png)
 
 The ISP/SPI is exposed (on J2) as well, so the device can be powered and programmed from the board J2 connector directly, or programmed from the separate ISP pin header.
 
