@@ -34,7 +34,7 @@ Still the USB is 5V and forward voltages for LEDs are ~3.3V, the increased trace
 
 If the `PORTD6` without current limiting resistor would be used as output and set to high the LED, PORT's PIN and/or MCU could be damaged.
 
-Even when the PCB doesn't have resistors populated, there are resistors inside each IO pin, the pull-up resistors of the input mode. These resistors are not precise and according to the spec around 20k to 50k. Which might be on a higher side and limiting current too much, however it's enough to lit the LED and current wise it's safe. The MCU @ 8MHz combined with the LED lit consume together around 10mA.
+Even when the PCB doesn't have resistors populated, there are resistors inside each IO pin, the pull-up resistors of the input mode. These resistors are not precise and according to the spec around 20k ohm to 50k ohm. Which might be on a higher side and limiting current too much, however it's enough to lit the LED and current wise it's safe. The MCU @ 8MHz combined with the LED lit consume together around 10mA.
 
 To turn on the LED the PORTD6 direction has to be as `input with pull-up`, to turn off the LED it needs to be set as `input in tri-state` or as output with low output (however be careful to not set the output to high).
 
@@ -84,3 +84,15 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 | 4 | MOSI |
 | 5 | MISO |
 | 6 | VCC |
+
+# Clock
+
+For many projects the internal 8MHz oscillator is enough, however for the USB to work a external crystal needs to be populated on the PCB together with two capacitors.
+
+# Software USB
+
+On top of having a stable clock, 4 more passives components have to be populated on the PCB:
+
+ - zener diodes (two 3.6V) 
+ - resistors (two 68 ohm)
+
