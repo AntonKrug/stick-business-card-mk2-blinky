@@ -87,7 +87,7 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 
 # Clock
 
-For many projects the internal 8MHz oscillator is enough, however for the USB to work a external crystal needs to be populated on the PCB together with two capacitors.
+For many projects the internal 8MHz oscillator is enough, however for the USB to work a external crystal (12Mhz for example) needs to be populated on the PCB together with two capacitors.
 
 # Software USB
 
