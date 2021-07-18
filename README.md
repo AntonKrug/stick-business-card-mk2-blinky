@@ -92,7 +92,7 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 
 ## KiCad
 
-KiCad schematics are stored in [KiCad folder](/KiCad)
+KiCad schematics are stored in [KiCad folder](/KiCAD)
 
 # Clock
 
