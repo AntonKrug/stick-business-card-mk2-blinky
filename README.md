@@ -90,6 +90,10 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 | 5 | MISO |
 | 6 | VCC |
 
+## KiCad
+
+KiCad schematics are stored in [KiCad folder](/KiCad)
+
 # Clock
 
 For many projects the internal 8MHz oscillator is enough, however for the USB to work a external crystal (12Mhz for example) needs to be populated on the PCB together with two capacitors.
@@ -100,4 +104,6 @@ On top of having a stable clock, 4 more passives components have to be populated
 
  - zener diodes (two 3.6V) 
  - resistors (two 68 ohm)
+
+I'm having various variants of the boards and these passives are already pre-populated on some of them.
 
