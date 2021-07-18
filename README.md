@@ -34,7 +34,12 @@ Still the USB is 5V and forward voltages for LEDs are ~3.3V, the increased trace
 
 If the `PORTD6` without current limiting resistor would be used as output and set to high the LED, PORT's PIN and/or MCU could be damaged.
 
-Even when the PCB doesn't have resistors populated, there are resistors inside each IO pin, the pull-up resistors of the input mode. These resistors are not precise and according to the spec around 20k ohm to 50k ohm. Which might be on a higher side and limiting current too much, however it's enough to lit the LED and current wise it's safe. The MCU @ 8MHz combined with the LED lit consume together around 10mA.
+Even when the PCB doesn't have resistors populated, there are resistors inside each IO pin (the pull-up resistors):
+
+![io](../assets/images/gpio.png)
+
+
+These resistors are not precise and according to the spec around 20k ohm to 50k ohm. Which might be on a higher side and limiting current too much (LED current is under 1mA), however it's enough to lit the LED. The input's pull-up resistor is designed to be shorted continuously so powering a LED has no effect on the ports longevity. And LED which can be driven with 20mA will be with this method driven with a current smaller than 1mA. Therefore both (port and LED) can operate within their spec and it's safe.
 
 To turn on the LED the PORTD6 direction has to be as `input with pull-up`, to turn off the LED it needs to be set as `input in tri-state` or as output with low output (however be careful to not set the output to high).
 
