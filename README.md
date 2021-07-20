@@ -4,8 +4,6 @@ I made unique business cards for myself, they are just narrow "sticks" which fit
 
 ![many](../assets/images/many.jpg)
 
-[![blinky in morse](https://img.youtube.com/vi/KG60dhC3l5k/0.jpg)](https://www.youtube.com/watch?v=KG60dhC3l5k)
-
 However there are more populated variants which can have own dedicated ISP connector (1.27mm pin pitch) and with few more passives have software implemented USB HID capabilities:
 
 ![isp](../assets/images/isp.jpg)
@@ -17,6 +15,13 @@ One variant has soldered pin headers on the edges and is simple, yet full dev bo
 This repository is documenting the "breadboard" variant, showing the pinout of the connectors and contains small morse code blinky project.
 
 **Note**: In the images above I'm showing only one side of the PCB, the one which doesn't contain the contact details of the business card and therefore the traces for the USB connector are not visible on the photos.
+
+# Video
+
+Click to open in YouTube:
+
+[![blinky in morse](https://img.youtube.com/vi/KG60dhC3l5k/0.jpg)](https://www.youtube.com/watch?v=KG60dhC3l5k)
+
 
 # LED
 
