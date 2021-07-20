@@ -58,7 +58,7 @@ The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configu
 
 ## Minimalizing risk
 
-When using either pull-up or PWM a good coding habit should be to have dedicated functions to set the LEDs states and only invoke these instead of accessing registers directly, because they are simple they will get inlined and because the same functions are reused it will be less likely to make a typo and set port register to a wrong value. See bundled source code for the blinky: [main](/src_blinky/bc_mk2_v1.c)
+When using either pull-up or PWM a good coding habit should be to have dedicated functions to set the LEDs states and only invoke these instead of accessing registers directly, because they are simple they will get inlined and because the same functions are reused it will be less likely to make a typo and set port register to a wrong value. See bundled source code for the blinky: [main C file](/src_blinky/bc_mk2_v1.c)
 
 
 # Pinout
@@ -116,5 +116,5 @@ I'm having various variants of the boards and these passives are already pre-pop
 
 # Blinky
 
-The example project is done in CodeVision, however it's simple C project that other compilers (gcc/iar) should be able to use the code easily.
-[blinky](/src_blinky/)
+The example project is done in CodeVision, however it's simple C project that other compilers (gcc/iar) should be able to use the code easily:
+[blinky source folder](/src_blinky/)
