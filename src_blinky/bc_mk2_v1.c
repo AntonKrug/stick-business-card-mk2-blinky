@@ -237,10 +237,12 @@ void set_led_off() {
 }
 
 void main(void) {
+//const unsigned char message[] = " 0123456789 qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM &'@:,=.-+\"?/";    
   const unsigned char message[] = "  blink";    
-  const unsigned char *end   = message + sizeof(message);
-       
-  unsigned char *index = end;
+//const unsigned char message[] = "  blink http://www.antonkrug.eu";
+    
+  const unsigned char *end      = message + sizeof(message);
+  unsigned char       *index    = end;
     
   morse_code    letter;  
 
