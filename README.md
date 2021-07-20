@@ -54,6 +54,9 @@ The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configu
 
 **Warning**: In this mode it's unsafe to stop the PWM without careful timing and setting the output to safe state before the execution is interrupted. Things like JTAG debugging would be exposing the LED to dangers where the LED could be left in bad state for too long, however the `ATMEGA88` has no JTAG features. In simple terms, when using PWM extra measures have to be made to make sure it will not get stuck with the high output set for too long.
 
+## Minimalizing risk
+
+When using either pull-up or PWM a good coding habit should be to have dedicated functions to set the LEDs states and only invoke these instead of accessing registers directly, because they are simple they will get inlined and because the same functions are reused it will be less likely to make a typo and set port register to a wrong value. See bundled source code for the blinky: [main](/src/bc_mk2_v1.c)
 
 
 # Pinout
