@@ -18,7 +18,7 @@ This repository is documenting the "breadboard" variant, showing the pinout of t
 
 # Video
 
-Click to open in YouTube:
+Click the thumbnail to open the video in YouTube:
 
 [![blinky in morse](https://img.youtube.com/vi/KG60dhC3l5k/0.jpg)](https://www.youtube.com/watch?v=KG60dhC3l5k)
 
