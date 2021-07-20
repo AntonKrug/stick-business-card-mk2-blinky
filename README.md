@@ -49,10 +49,12 @@ Second method is PWM which is abusing the spec slightly, but allows dimming cont
 
 Use as fast PWM as possible and control the current and brightness with the duty cycle. Do not set duty cycle above 10% (in my examples I do not exceed 7% and still the LED is bright enough). It means that most of the time the LED should be powered off. Tested the board with 7% duty cycle continuously on for 100h and didn't affect brightness/draw/temperature or any noticeable aspect of operation, while the expectation of a gimmick USB dev board are expected to be used less than 100h so this looks as OK solution, even when it's abusing the HW and the spec.
 
-The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configured to `Fast PWM` mode. In this mode it's recomended to use **inverted** output mode as that will allow to set the `OCR0A` to `0xff` which will result to 0% duty cycle. While non-inverting mode and `OCR0A` set to `0x00` will **not** produce 0% duty cycle and the LED will be always slightly lit.
+The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configured to `Fast PWM` mode. In this mode it's recommended to use **inverted** output mode as that will allow to set the `OCR0A` to `0xff` which will result to 0% duty cycle. While non-inverting mode and `OCR0A` set to `0x00` will **not** produce 0% duty cycle and the LED will be always slightly lit.
 
 
-**Warning**: In this mode it's unsafe to stop the PWM without careful timing and setting the output to safe state before the execution is intrestuped. Things like JTAG debugging would be exposing the LED to dangers where the LED could be left in bad state for too long, however the `ATMEGA88` has no JTAG features. In simple terms, when using PWM extra measures have to be made to make sure it will not get stuck with the high output set for too long.
+**Warning**: In this mode it's unsafe to stop the PWM without careful timing and setting the output to safe state before the execution is interrupted. Things like JTAG debugging would be exposing the LED to dangers where the LED could be left in bad state for too long, however the `ATMEGA88` has no JTAG features. In simple terms, when using PWM extra measures have to be made to make sure it will not get stuck with the high output set for too long.
+
+
 
 # Pinout
 
