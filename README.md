@@ -22,6 +22,11 @@ Click the thumbnail to open the video in YouTube:
 
 [![blinky in morse](https://img.youtube.com/vi/KG60dhC3l5k/0.jpg)](https://www.youtube.com/watch?v=KG60dhC3l5k)
 
+# Schematic
+
+![schematic](../assets/images/schematic.png)
+
+The KiCAD schematic files are stored inside [KiCad/stickMk2-schematic folder](/KiCAD/stickMk2-schematic)
 
 # LED
 
@@ -108,7 +113,7 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 
 ## KiCad
 
-KiCad schematics are stored in [KiCad folder](/KiCAD)
+KiCad schematics (pinouts of ISP, J1, J2 and full board) are stored in [KiCad folder](/KiCAD)
 
 # Clock
 
