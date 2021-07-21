@@ -128,6 +128,10 @@ On top of having a stable clock, 4 more passives components have to be populated
 
 I'm having various variants of the boards and these passives are already pre-populated on some of them.
 
+# Reset
+
+The reset signal is not pulled up, in a noisy environment it's recommended to connect a pull-up resistor externally, the signal is exposed on J2 (pin 5) and ISP (pin 1) connectors.
+
 # Blinky
 
 The example project is done in CodeVision, however it's simple C project that other compilers (gcc/iar) should be able to use the code easily:
