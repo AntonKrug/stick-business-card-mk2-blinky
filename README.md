@@ -70,6 +70,8 @@ When using either pull-up or PWM a good coding habit should be to have dedicated
 
 ## Board pinout
 
+![breadboard](../assets/images/breadboard.jpg)
+
 ![pinout-whole](../assets/images/pinout-footprint.png)
 
 The ISP/SPI is exposed (on J2) as well, so the device can be powered and programmed from the board J2 connector directly, or programmed from the separate ISP pin header.
