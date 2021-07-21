@@ -2,3 +2,4 @@
 /src_blinky/Release
 /src_blinky/*.prj~
 /src_blinky/*.c~
+*.sch-bak
