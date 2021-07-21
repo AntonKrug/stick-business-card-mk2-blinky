@@ -87,6 +87,8 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 
 ## ISP pin-header pinout
 
+![ISP](../assets/images/pcb-isp.jpg)
+
 **Note**: This is not the typical 2.54mm pin spacing, but 1.27mm pin-header.
 
 ![pinout-isp-schematic](../assets/images/pinout_isp_schematic.png)
@@ -108,14 +110,19 @@ KiCad schematics are stored in [KiCad folder](/KiCAD)
 
 # Clock
 
-For many projects the internal 8MHz oscillator is enough, however for the USB to work a external crystal (12Mhz for example) needs to be populated on the PCB together with two capacitors.
+For many projects the internal 8MHz oscillator is enough, however for the USB to work a external crystal (12Mhz for example) needs to be populated on the PCB together with two capacitors (capacitor values depend on the crystal).
+
+![xtal](../assets/images/pcb-xtal.jpg)
 
 # Software USB
 
 On top of having a stable clock, 4 more passives components have to be populated on the PCB:
 
  - zener diodes (two 3.6V) 
+   ![zener](../assets/images/pcb-diodes.jpg)
+
  - resistors (two 68 ohm)
+   ![resistors](../assets/images/pcb-resistors.jpg)
 
 I'm having various variants of the boards and these passives are already pre-populated on some of them.
 
