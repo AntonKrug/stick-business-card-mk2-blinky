@@ -83,14 +83,14 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 
 | J1 | J2|
 | --- | --- |
-| PB2 | PD6 LED|
-| PB1 | VCC |
-| PB0 | GND |
-| PD7 | SCK |
-| PD5 | RST |
-| PC4 | MISO |
-| PC3 | MOSI |
-| PC2 | PC1 |
+| PB2 (PCINT2/nSS/OC1B)  | PD6 LED (do **not** set output to high) |
+| PB1 (PCIN1/OC1A)       | VCC (5V)                                |
+| PB0 (PCINT0/CLK0/ICP1) | GND                                     |
+| PD7 (PCINT23/AIN1)     | PB5 (**SCK**/PCINT5)                    |
+| PD5 (PCINT21/OC0B/T1)  | PC6 (**nRST**/PCINT14)                  |
+| PC4 (ADC4/SDA/PCINT12) | PB4 (**MISO**/PCINT4)                   |
+| PC3 (ADC3/PCINT11)     | PB3 (**MOSI**/PCINT3/OC2A)              |
+| PC2 (ADC2/PCINT10)     | PC1 (ADC1/PCINT9)                       |
 
 ## ISP pin-header pinout
 
