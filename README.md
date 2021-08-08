@@ -62,7 +62,7 @@ The USB is 5V and forward voltages for LEDs are ~3.3V, the increased trace resis
 
 If the `PORTD6` without current limiting resistor would be used as output and set to high the LED, PORT's PIN and/or MCU could be damaged.
 
-Even when the PCB doesn't have resistors populated, there are resistors inside each IO pin (the pull-up resistors):
+Even when the PCB doesn't have resistors populated, there are resistors inside each IO pin (the **Rpu** pull-up resistors):
 
 ![io](../assets/images/gpio.png)
 
