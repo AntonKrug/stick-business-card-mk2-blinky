@@ -33,7 +33,7 @@ There is valid concern to plug unknown (and hand made) USB devices to your USB h
  - The intend of the card is to present myself and it would be in my best interest to not damage anything especially when on the PCB are my contact details
  - If this is not enough then do not use it as USB device, use it as "business card" and ignore the USB capabilities 
 
-# Schematic
+# Schematic - KiCAD
 
 ![schematic](../assets/images/schematic.png)
 
@@ -55,7 +55,7 @@ The PCB has between `PORTD6` and LED purposefully long and thin trace. And it's 
 
 Still the USB is 5V and forward voltages for LEDs are ~3.3V, the increased trace resistance and using the pin in a weaker mode is not enough. Yet there are 2 approaches how to make the LED work:
 
-## Safer method
+## Safer method - Internal pull up resistor
 
 If the `PORTD6` without current limiting resistor would be used as output and set to high the LED, PORT's PIN and/or MCU could be damaged.
 
@@ -68,7 +68,7 @@ These resistors are not precise and according to the spec around 20k ohm to 50k 
 
 To turn on the LED the PORTD6 direction has to be as `input with pull-up`, to turn off the LED it needs to be set as `input in tri-state` or as output with low output (however be careful to not set the output to high).
 
-## Exiting method
+## Risky method - PWM
 
 Second method is PWM which is abusing the spec slightly, but allows dimming control.
 
@@ -79,12 +79,14 @@ The `PORTD6` is mapped as output pin `OC0A` for the Timer0, which can be configu
 
 **Warning**: In this mode it's unsafe to stop the PWM without careful timing and setting the output to safe state before the execution is interrupted. Things like JTAG debugging would be exposing the LED to dangers where the LED could be left in bad state for too long, however the `ATMEGA88` has no JTAG features. In simple terms, when using PWM extra measures have to be made to make sure it will not get stuck with the high output set for too long.
 
-## Minimalizing risk
+## Minimalizing the risks
 
-When using either pull-up or PWM a good coding habit should be to have dedicated functions to set the LEDs states and only invoke these instead of accessing registers directly, because they are simple they will get inlined and because the same functions are reused it will be less likely to make a typo and set port register to a wrong value. See bundled source code for the blinky: [main C file](/src_blinky/bc_mk2_v1.c)
+When using either pull-up or PWM a good coding habit should be to have dedicated functions to set the LEDs states and only invoke these instead of accessing registers directly, because they are simple they will get inlined (no performance penalty) and because the same functions are reused it will be less likely to make a typo and set port register to a wrong value. See bundled source code for the blinky: [main C file](/src_blinky/bc_mk2_v1.c)
 
 
 # Pinout
+
+KiCad schematics (pinouts of ISP, J1, J2 and full board) are stored in [KiCad folder](/KiCAD)
 
 ## Board pinout
 
@@ -124,9 +126,6 @@ The ISP/SPI is exposed (on J2) as well, so the device can be powered and program
 | 5 | MISO |
 | 6 | VCC |
 
-## KiCad
-
-KiCad schematics (pinouts of ISP, J1, J2 and full board) are stored in [KiCad folder](/KiCAD)
 
 # Clock
 
@@ -154,5 +153,5 @@ The reset signal is not pulled up, in a noisy environment it's recommended to co
 
 ## Blinky
 
-The example project is done in CodeVision, however it's simple C project that other compilers (gcc/iar) should be able to use the code easily:
+The example project is done in CodeVision, however it's simple C project that other compilers (gcc/IAR) should be able to use the code easily:
 [blinky source folder](/src_blinky/)
