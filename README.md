@@ -22,9 +22,22 @@ Click the thumbnail to open the video in YouTube:
 
 [![blinky in morse](https://img.youtube.com/vi/KG60dhC3l5k/0.jpg)](https://www.youtube.com/watch?v=KG60dhC3l5k)
 
+# Not connecting it to my USB
+
+There is valid concern to plug unknown (and hand made) USB devices to your USB host. For rogue USB devices it's possible to damage the ports: [USB kill](https://usbkill.com/) [USB killer Wiki](https://en.wikipedia.org/wiki/USB_Killer)
+
+ - The device doesn't contain enough HW to damage the port (no capacitors to charge up like with the USB killer)
+ - Full schematics are open source, see for yourself that nothing bad is done to the USB port
+ - Firmware is open source and user is welcome to replace it with his own, the device can be reprogrammed from 1.27mm ISP header, 2.54 J2 pin header, with TQFP-32 pogo-pin ISP cable such as (Hobbyking's Atmel socket firmware flashing)[https://hobbyking.com/en_us/atmel-atmega-socket-firmware-flashing-tool.html] or (DIY version of the adapter)[https://www.youtube.com/watch?v=t5unHRB2sV4]
+ - Can use USB battery power bank (but will not be able to see and use the USB capabilities)
+ - The intend of the card is to present myself and it would be in my best interest to not damage anything especially when on the PCB are my contact details
+ - If this is not enough then do not use it as USB device, use it as "business card" and ignore the USB capabilities 
+
 # Schematic
 
 ![schematic](../assets/images/schematic.png)
+
+**IMPORTANT NOTE**: PD6 is connected directly to the LED **without** current limiting resistor, read below what considerations have to be made so the PIN or LED will not be damaged.
 
 The KiCAD schematic files are stored inside [KiCad/stickMk2-schematic folder](/KiCAD/stickMk2-schematic)
 
